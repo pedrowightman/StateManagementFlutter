@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('MisiónTIC 2022 - Móvil'),
+          title: Text('MisiónTIC 2022 - Móvil - GetX'),
         ),
         body: Center(
           child: Converter(),

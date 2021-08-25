@@ -48,54 +48,9 @@ class Dec2Bin extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "1",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(1),
-                    ),
-                  )),
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "2",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(2),
-                    ),
-                  )),
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "3",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(3),
-                    ),
-                  )),
+                  keyPadButton(1, context),
+                  keyPadButton(2, context),
+                  keyPadButton(3, context),
                 ],
               ),
             )),
@@ -105,54 +60,9 @@ class Dec2Bin extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "4",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(4),
-                    ),
-                  )),
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "5",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(5),
-                    ),
-                  )),
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "6",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(6),
-                    ),
-                  )),
+                  keyPadButton(4, context),
+                  keyPadButton(5, context),
+                  keyPadButton(6, context),
                 ],
               ),
             )),
@@ -162,54 +72,9 @@ class Dec2Bin extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "7",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(7),
-                    ),
-                  )),
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "8",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(8),
-                    ),
-                  )),
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: MaterialButton(
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "9",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () =>
-                          Provider.of<ConvertionModel>(context, listen: false)
-                              .updateDecimal(9),
-                    ),
-                  )),
+                  keyPadButton(7, context),
+                  keyPadButton(8, context),
+                  keyPadButton(9, context),
                 ],
               ),
             )),
@@ -237,27 +102,30 @@ class Dec2Bin extends StatelessWidget {
                           ),
                         ),
                       )),
-                  Expanded(
-                      flex: 1,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                        child: MaterialButton(
-                          color: Theme.of(context).primaryColor,
-                          child: Text(
-                            "0",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          onPressed: () => Provider.of<ConvertionModel>(context,
-                                  listen: false)
-                              .updateDecimal(0),
-                        ),
-                      )),
+                  keyPadButton(0, context),
                 ],
               ),
             )),
           ]),
+    );
+  }
+
+  Widget keyPadButton(number, context) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.all(8.0),
+        child: MaterialButton(
+          color: Theme.of(context).primaryColor,
+          child: Text(
+            number.toString(),
+            style: new TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          onPressed: () => Provider.of<ConvertionModel>(context, listen: false)
+              .updateDecimal(number),
+        ),
+      ),
     );
   }
 }
