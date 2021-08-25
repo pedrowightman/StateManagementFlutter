@@ -1,4 +1,4 @@
-#Conversor Binario Decimal con GetX
+# Conversor Binario Decimal con GetX
 
 En este ejemplo se usa la librería GetX para implementar el convertor binario decimal
 
