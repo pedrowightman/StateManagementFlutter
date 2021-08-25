@@ -1,13 +1,11 @@
 import 'package:demo_app/domain/provider/convertion_model.dart';
-import 'package:demo_app/domain/use_case/convertion_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Dec2Bin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final calculator = Convertion(context);
-
+    //final calculator = Convertion(context);
     return Container(
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -61,7 +59,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(1),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(1),
                     ),
                   )),
                   Expanded(
@@ -75,7 +75,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(2),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(2),
                     ),
                   )),
                   Expanded(
@@ -89,7 +91,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(3),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(3),
                     ),
                   )),
                 ],
@@ -112,7 +116,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(4),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(4),
                     ),
                   )),
                   Expanded(
@@ -126,7 +132,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(5),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(5),
                     ),
                   )),
                   Expanded(
@@ -140,7 +148,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(6),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(6),
                     ),
                   )),
                 ],
@@ -163,7 +173,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(7),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(7),
                     ),
                   )),
                   Expanded(
@@ -177,7 +189,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(8),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(8),
                     ),
                   )),
                   Expanded(
@@ -191,7 +205,9 @@ class Dec2Bin extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => calculator.convertDecimal(9),
+                      onPressed: () =>
+                          Provider.of<ConvertionModel>(context, listen: false)
+                              .updateDecimal(9),
                     ),
                   )),
                 ],
@@ -209,7 +225,9 @@ class Dec2Bin extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 4.0),
                         child: MaterialButton(
                           color: Theme.of(context).accentColor,
-                          onPressed: () => calculator.reset(),
+                          onPressed: () => Provider.of<ConvertionModel>(context,
+                                  listen: false)
+                              .reset(),
                           child: Text(
                             "Reset",
                             style: TextStyle(
@@ -231,7 +249,9 @@ class Dec2Bin extends StatelessWidget {
                               color: Colors.white,
                             ),
                           ),
-                          onPressed: () => calculator.convertDecimal(0),
+                          onPressed: () => Provider.of<ConvertionModel>(context,
+                                  listen: false)
+                              .updateDecimal(0),
                         ),
                       )),
                 ],

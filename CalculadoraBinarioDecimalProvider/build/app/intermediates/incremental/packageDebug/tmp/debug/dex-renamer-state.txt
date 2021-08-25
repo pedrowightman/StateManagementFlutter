@@ -1,0 +1,4 @@
+#Wed Aug 25 15:06:49 COT 2021
+base.0=/Users/augustosalazar/Projects/Flutter2020/samplesMinTic/ejemplos_state_management/CalculadoraBinarioDecimalProvider/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
