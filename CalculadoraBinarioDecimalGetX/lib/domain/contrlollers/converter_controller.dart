@@ -2,21 +2,24 @@ import 'package:calculadorabinariodecimalgetx/domain/use_case/converter.dart';
 import 'package:get/get.dart';
 
 class ConverterController extends GetxController {
-  var decimal = "0".obs;
-  var binary = "0".obs;
+  var _decimal = "0".obs;
+  var _binary = "0".obs;
+
+  String get decimal => _decimal.value;
+  String get binary => _binary.value;
 
   void updateDecimal(int digit) {
-    decimal.value = Converter.adjustValue(decimal.value, digit);
-    binary.value = Converter.dec2bin(decimal.value);
+    _decimal.value = Converter.adjustValue(_decimal.value, digit);
+    _binary.value = Converter.dec2bin(_decimal.value);
   }
 
   void updateBinary(int digit) {
-    binary.value = Converter.adjustValue(binary.value, digit);
-    decimal.value = Converter.bin2dec(binary.value);
+    _binary.value = Converter.adjustValue(_binary.value, digit);
+    _decimal.value = Converter.bin2dec(_binary.value);
   }
 
   void reset() {
-    binary.value = "0";
-    decimal.value = "0";
+    _binary.value = "0";
+    _decimal.value = "0";
   }
 }
