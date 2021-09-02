@@ -50,40 +50,8 @@ class Bin2Dec extends StatelessWidget {
                     child: Row(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          Expanded(
-                            child: Container(
-                              padding: const EdgeInsets.all(8.0),
-                              child: MaterialButton(
-                                color: Theme.of(context).primaryColor,
-                                child: Text(
-                                  "1",
-                                  style: new TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                // we raise a new event
-                                onPressed: () => BlocUtils()
-                                    .event(context, UpdateBinaryEvent(1)),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              padding: const EdgeInsets.all(8.0),
-                              child: MaterialButton(
-                                color: Theme.of(context).primaryColor,
-                                child: Text(
-                                  "0",
-                                  style: new TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                // we raise a new event
-                                onPressed: () => BlocUtils()
-                                    .event(context, UpdateBinaryEvent(0)),
-                              ),
-                            ),
-                          ),
+                          _key(1, context),
+                          _key(0, context),
                         ]),
                   ),
                   Expanded(
@@ -107,5 +75,25 @@ class Bin2Dec extends StatelessWidget {
                 ],
               );
             }));
+  }
+
+  Widget _key(number, context) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.all(8.0),
+        child: MaterialButton(
+          color: Theme.of(context).primaryColor,
+          child: Text(
+            number.toString(),
+            style: new TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          // we raise a new event
+          onPressed: () =>
+              BlocUtils().event(context, UpdateBinaryEvent(number)),
+        ),
+      ),
+    );
   }
 }
