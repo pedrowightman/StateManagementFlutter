@@ -6,14 +6,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MisiónTIC 2022',
+      title: 'Desarrollo Móvil',
       theme: ThemeData(
         primaryColor: Color(0xff4264b4),
         accentColor: Color(0xff1d2448),
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('MisiónTIC 2022 - Móvil - GetX'),
+          title: Text('Ejemplos - Móvil - Provider'),
         ),
         body: Center(
           child: Converter(),
